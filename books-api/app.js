@@ -11,3 +11,12 @@ let books = [
  app.use(express.json());
 
  app.use(bodyParser.urlencoded({ extended: true }));
+
+ // parse incoming JSON data in requests
+app.use(express.json())
+// Configure body-parser to handle URL-encoded form data
+app.use(bodyParser.urlencoded({ extended: true })); // Set extended: true for nested objects
+
+app.get('/books', (req, res) => {
+    res.json(books); // Send the array of books as JSON response
+ });
